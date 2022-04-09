@@ -86,6 +86,17 @@ body {
         }
         .iconCart {
           background-image: $cart-icon;
+          position: relative;
+          .countCart {
+            position:absolute;
+            @include font ($lang-weight, 15px);
+            background-color: $product-price-color;
+            border-radius: 9px;
+            color: $card-background;
+            padding: 0 4px;
+            right: 10px;
+          }
+
         }
         .btn {
           width: 30px;
@@ -122,7 +133,9 @@ body {
     .imgWrap{
       @include flex-container(center, space-around);
       margin-bottom: 54px;
+      min-height: 250px;
     }
+
     .productInfo {
       @include flex-container(top, space-between);
       .productName {
@@ -160,6 +173,7 @@ body {
     }
     .ratingWrap{
       @include flex-container(center, space-between);
+      margin-top: 20px;
       position: relative;
       .productRating {
         color: $grey;

@@ -36,6 +36,17 @@ body .wrapper {
 }
 .header .iconsWrap .iconCart {
   background-image: url("/img/icons/cart.svg");
+  position: relative;
+}
+.header .iconsWrap .iconCart .countCart {
+  position: absolute;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: #FFA542;
+  border-radius: 9px;
+  color: #FFFFFF;
+  padding: 0 4px;
+  right: 10px;
 }
 .header .iconsWrap .btn {
   width: 30px;
@@ -80,6 +91,7 @@ body .wrapper {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 54px;
+  min-height: 250px;
 }
 .container .productCard .productInfo {
   display: flex;
@@ -125,6 +137,7 @@ body .wrapper {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 20px;
   position: relative;
 }
 .container .productCard .ratingWrap .productRating {
