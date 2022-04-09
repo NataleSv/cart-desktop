@@ -1,0 +1,246 @@
+//header icons
+$like-icon: url("/img/icons/like.svg");
+$cart-icon: url("/img/icons/cart.svg");
+
+//card icons
+$delete-product-icon: url("/img/icons/delete.svg");
+
+//footer icons
+$planet-icon: url("/img/icons/RU.svg");
+$telegram-icon: url("/img/icons/Telegram.svg");
+$vk-icon: url("/img/icons/VK.svg");
+$whatsapp-icon: url("/img/icons/Whatsapp.svg");
+
+//colors
+$background-color: #EAEAEA;
+$card-background: #FFFFFF;
+$logo-color: #101010;
+$grey: #838383;
+$product-name-color: #1C1C27;
+$product-price-color: #FFA542;
+$old-price-color: #FFCE7F;
+$discount-color: #DF6464;
+$button-color: #000000;
+
+//pseudo
+$rub: ' ₽';
+$star-icon: url("/img/icons/star.svg");
+$percent: '%';
+
+//fonts
+$font-family: 'Montserrat', sans-serif;
+$logo-font-weight: 700;
+$other-font-weight: 600;
+$lang-weight: 500;
+$footer-weight: 400;
+
+//shadows
+$main-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+
+
+@mixin icons ($padding){
+  padding: $padding;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin flex-container($vertical, $horizontal){
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+  flex-wrap: wrap;
+}
+
+@mixin font ($weight, $size) {
+  font-weight: $weight;
+  font-size: $size;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+body {
+  background: $background-color;
+  .wrapper {
+    max-width: 1110px;
+    margin: auto;
+  }
+}
+
+.header{
+    @include flex-container(center, space-between);
+
+    .iconsWrap {
+        @include flex-container(center, space-between);
+        .icon {
+          @include icons(15px);
+        }
+        .iconHeart {
+          background-image: $like-icon;
+        }
+        .iconCart {
+          background-image: $cart-icon;
+        }
+        .btn {
+          width: 30px;
+          height: 30px;
+        }
+    }
+}
+
+.sectionName {
+  @include font ($other-font-weight, 20px);
+  color: $grey;
+  margin-bottom: 20px;
+
+}
+
+.container {
+  @include flex-container(top, space-between);
+  .productCard {
+    @include font ($other-font-weight, 17px);
+    width: 350px;
+    padding: 15px 20px 30px;
+    border-radius: 30px;
+    box-shadow: $main-shadow;
+    background: $card-background;
+    margin-bottom: 30px;
+    .imgWrap{
+      @include flex-container(center, space-around);
+      margin-bottom: 54px;
+    }
+    .productInfo {
+      @include flex-container(top, space-between);
+      .productName {
+        @include font ($other-font-weight, 17px);
+        color: $product-name-color;
+      }
+     .productPrice {
+        color: $product-price-color;
+        &::after{
+          content: $rub;
+        }
+      }
+      .oldProductPrice {
+        color: $old-price-color;
+        font-size: 13px;
+        text-decoration: line-through;
+        &::after{
+          content: $rub;
+        }
+      }
+      .discountPrice {
+        color: $discount-color;
+        font-size: 19px;
+        &::after{
+          content: $rub;
+        }
+      }
+      .discount {
+        color: $discount-color;
+        font-size: 16px;
+        &::after {
+          content: $percent;
+        }
+      }
+    }
+    .ratingWrap{
+      @include flex-container(center, space-between);
+      position: relative;
+      .productRating {
+        color: $grey;
+        padding-left: 30px;
+        &::before {
+          content: $star-icon;
+          position: absolute;
+          top: -2px;
+          left: -4px;
+        }
+      }
+      .btnBuy {
+         @include font ($other-font-weight, 17px);
+         color: $button-color;
+       }
+    }
+  }
+}
+
+
+.footer {
+  @include flex-container(top, space-between);
+  background-color:$card-background;
+  padding: 29px;
+  box-shadow: $main-shadow;
+  border-radius: 30px 30px 0 0;
+
+  .navMenu li{
+    @include font ($footer-weight, 17px);
+    list-style-type: none;
+    margin-bottom: 10px;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+  .serviceAndLang{
+    @include flex-container(top, space-between);
+    flex-direction: column;
+    .languages {
+      @include flex-container(center, start);
+      .iconLang {
+        @include icons(10px);
+        background-image: $planet-icon;
+      }
+      .lang {
+        margin-left: 15px;
+      }
+      .activeLang {
+        @include font ($logo-font-weight, 15px);
+        color:$product-price-color;
+      }
+      .inactiveLang {
+        @include font ($lang-weight, 15px);
+        color:$logo-color;
+      }
+    }
+  }
+  .social {
+    @include flex-container(center, space-between);
+    .socialIcon {
+      @include icons(15px);
+      background-size: contain;
+      margin-left: 17px;
+    }
+      .vk {
+        background-image: $vk-icon;
+      }
+      .telegram{
+        background-image: $telegram-icon;
+      }
+      .whatsAap {
+        background-image: $whatsapp-icon;
+      }
+  }
+}
+
+.btn {
+  border:none;
+  background: none;
+  cursor: pointer;
+}
+
+.logo {
+  @include font ($logo-font-weight, 25px);
+  color: $logo-color;
+}
+
+a {
+  text-decoration: none;
+  color:$button-color;
+}
+
