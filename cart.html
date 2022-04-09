@@ -2,21 +2,29 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Корзина</title>
 </head>
 <body>
    <div class="wrapper">
-       <header>
-           <h1>QPICK</h1>
-           <div class="icons">
-               <div class="iconHeart"></div>
-               <div class="iconCart"></div>
+       <header class="header">
+           <h1 class="logo">QPICK</h1>
+           <div class="iconsWrap">
+               <div class="icon iconHeart">
+                   <button class="btn"></button>
+               </div>
+               <div class="icon iconCart">
+                   <button class="btn"></button>
+               </div>
            </div>
        </header>
-       <main>
-           <h2>Корзина</h2>
+       <main class="main">
+           <h2 class="sectionTitle">Корзина</h2>
            <div class="container">
-               <article class="basketCard">
+               <article class="productCard">
                    <div>
                        <div>
                            <img class="imgProduct" href="" alt="">
@@ -40,19 +48,19 @@
                        </div>
                    </div>
                </article>
-               <div class="ordering">
+               <div class="ordering productCard">
                    <p>Итого</p>
                    <p>
-                       <span>p</span>
+
                        <span class="totalPrice"></span>
                    </p>
                    <button>Перейти к оформлению</button>
                </div>
            </div>
        </main>
-       <footer>
+       <footer class="footer">
            <div class="logo">
-               <p class="QPICK"></p>
+               <p class="logo">QPICK</p>
            </div>
            <div class="navMenu">
                <nav>
@@ -65,17 +73,19 @@
            </div>
            <div class="serviceAndLang">
                <a href="">Условия сервиса</a>
-               <div class="lang">
-                   <a href="">Рус</a>
-                   <a href="">Eng</a>
+               <div class="languages">
+                   <div class="iconLang"></div>
+                   <a href="" class="lang activeLang">Рус</a>
+                   <a href="" class="lang inactiveLang">Eng</a>
                </div>
-               <div class="social">
-                   <a class="vk" href="" title="VK"></a>
-                   <a class="telegram" href="" title="Telegram"></a>
-                   <a class="whatsAap" href="" title="WhatsAap"></a>
-               </div>
+           </div>
+           <div class="social">
+               <a class="vk socialIcon" href="" title="VK"></a>
+               <a class="telegram socialIcon" href="" title="Telegram"></a>
+               <a class="whatsAap socialIcon" href="" title="WhatsAap"></a>
            </div>
        </footer>
    </div>
+   <script src="index.js"></script>
 </body>
 </html>
