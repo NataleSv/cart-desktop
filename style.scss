@@ -94,6 +94,14 @@ body {
     }
 }
 
+.main {
+  min-height: calc(100vh - 205px);
+  .sectionTitle {
+    color: $product-name-color;
+    @include font ($other-font-weight, 20px);
+  }
+}
+
 .sectionName {
   @include font ($other-font-weight, 20px);
   color: $grey;
