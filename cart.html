@@ -24,37 +24,39 @@
        <main class="main">
            <h2 class="sectionTitle">Корзина</h2>
            <div class="container">
-               <article class="productCard">
+               <article class="card basketCard">
                    <div>
                        <div>
-                           <img class="imgProduct" href="" alt="">
+                           <img class="imgProduct" src="" alt="">
                        </div>
                        <div>
-                           <h3 class="productName"></h3>
+                           <h3 class="productName">dfghj</h3>
                            <div class="price">
-                               <p class="productPrice"></p>
+                               <p class="productPrice">4556</p>
                            </div>
                        </div>
                        <button class="deleteProduct">delete</button>
                    </div>
                    <div>
-                       <div>
-                           <button>-</button>
-                           <p class="count"></p>
-                           <button>+</button>
+                       <div class="countContainer">
+                           <button class="minus" data-id="elem1">-</button>
+                           <p class="count">0</p>
+                           <button class="plus" data-id="elem1">+</button>
                        </div>
                        <div>
                            <p class="finalProductPrice"></p>
                        </div>
                    </div>
                </article>
-               <div class="ordering productCard">
-                   <p>Итого</p>
-                   <p>
 
+
+
+               <div class="ordering card">
+                   <p class="total">ИТОГО</p>
+                   <p>
                        <span class="totalPrice"></span>
                    </p>
-                   <button>Перейти к оформлению</button>
+                   <button class="orderingBtn">Перейти к оформлению</button>
                </div>
            </div>
        </main>
