@@ -247,4 +247,40 @@ a {
   color: #000000;
 }
 
+.card {
+  padding: 22px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #FFFFFF;
+  margin-top: 13px;
+}
+
+.basketCard {
+  width: 633px;
+}
+
+.ordering {
+  width: 350px;
+  position: relative;
+  height: 115px;
+}
+.ordering .total {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.orderingBtn {
+  font-weight: 600;
+  font-size: 17px;
+  color: #FFFFFF;
+  background-color: #101010;
+  width: 350px;
+  position: absolute;
+  padding: 15px;
+  bottom: 0;
+  left: 0;
+  border-radius: 20px;
+  border: none;
+}
+
 /*# sourceMappingURL=style.css.map */
