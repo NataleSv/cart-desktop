@@ -193,17 +193,147 @@ addRate(wirelessHeadphones,wirelessHeadphonesRating);
 
 //добавление в корзину
 let countCart = document.getElementsByClassName("countCart")[0];
-let count = 0;
 
-let buyBtn = document.getElementsByClassName("btnBuy");
-for(let i=0; i< buyBtn.length; i++) {
-    buyBtn[i].addEventListener( "click" , () => {
-            count+=1;
-            countCart.innerHTML = count;
-            return countCart.innerHTML;
-        }
-    );
+
+const cart = {
+    '0': {
+        img: "./img/productImg/Apple_BYZ_S8521.png",
+        title: "Apple BYZ S852I",
+        price: 2927,
+        oldPrice: 3527,
+        discountPrice:null,
+        rate: 4.7,
+        discount: null,
+        count: 0,
+    },
+    '1':{
+        img: "./img/productImg/Apple_EarPods.png",
+        title: "Apple EarPods",
+        price: 2327,
+        oldPrice: null,
+        discountPrice:null,
+        rate: 4.5,
+        discount:null,
+        count: 0,
+    },
+    '2':{
+        img: "./img/productImg/Apple_EarPods2.png",
+        title: "Apple EarPods 2",
+        price: 2327,
+        oldPrice: null,
+        discountPrice:null,
+        rate: 4.5,
+        discount:null,
+        count: 0,
+    },
+    '3':{
+        img: "./img/productImg/Apple_BYZ_S8521.png",
+        title: "Apple BYZ S852I",
+        price: null,
+        oldPrice: null,
+        discountPrice: 2927,
+        rate: 4.7,
+        discount: "-20",
+        count: 0,
+    },
+    '4':{
+        img: "./img/productImg/Apple_EarPods2.png",
+        title: "Apple EarPods 2",
+        price: 2327,
+        oldPrice: null,
+        discountPrice:null,
+        rate: 4.5,
+        discount:null,
+        count: 0,
+    },
+     '5':{
+        img: "./img/productImg/BOROFONE_BO4.png",
+        title: "Apple EarPods",
+        price: 2327,
+        oldPrice: null,
+        discountPrice:null,
+        rate: 4.5,
+        discount:null,
+        count: 0,
+    },
+    '6': {
+        img: "./img/productImg/Apple_BYZ_S8521.png",
+        title: "Apple BYZ S852I",
+        price: 2927,
+        oldPrice: 3527,
+        discountPrice:null,
+        rate: 4.7,
+        discount: null,
+        count: 0,
+    },
+    '7': {
+        img: "./img/productImg/Apple_EarPods.png",
+        title: "Apple EarPods",
+        price: 2327,
+        oldPrice: null,
+        discountPrice:null,
+        rate: 4.5,
+        discount:null
+    },
+    '8': {
+        img: "./img/productImg/Apple_EarPods.png",
+        title: "Apple EarPods",
+        price: 2327,
+        oldPrice: null,
+        discountPrice: null,
+        rate: 4.5,
+        discount:null
+    },
+    totalCount:0
 }
 
 
+document.onclick = event => {
+    if (event.target.classList.contains('plus')) {
+        plusFunction(event.target.dataset.id);
+    }
+    if (event.target.classList.contains('minus')) {
+        minusFunction(event.target.dataset.id);
+    }
+}
+
+
+
+
+
+
+//увеличение
+const plusFunction = id => {
+    cart[id]['count']++;
+    cart.totalCount++;
+    renderCart();
+}
+//уменьшение
+const minusFunction = id => {
+    if(cart[id]['count']-1 === 0) {
+        deleteFunction(id);
+        return true;
+    }
+    cart[id]['count']--;
+    renderCart();
+}
+
+//удаление товара
+const deleteFunction = id => {
+    delete cart[id]['count'];
+    renderCart();
+}
+
+const renderCart = () => {
+    countCart.innerHTML = cart.totalCount;
+    sessionStorage.cart = JSON.stringify(cart);
+    console.log(cart);
+}
+
+renderCart();
+
+
+
+//вывод карточки
+let productCart = JSON.parse( sessionStorage.cart);
 
