@@ -337,3 +337,10 @@ renderCart();
 //вывод карточки
 let productCart = JSON.parse( sessionStorage.cart);
 
+function createCartProduct () {
+    let container = document. getElementsByClassName('containerCart')[0];
+    let basketCard = document.createElement("article");
+    basketCard.className = "card basketCard";
+
+
+}
