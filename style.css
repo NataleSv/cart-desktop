@@ -259,6 +259,25 @@ a {
   width: 633px;
 }
 
+.countBtn {
+  background-color: #FFA542;
+  padding: 0 10px;
+  font-size: 25px;
+  border-radius: 50%;
+  color: #FFFFFF;
+}
+
+.minus {
+  padding: 0 13px 1px;
+}
+
+.deleteProduct {
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/img/icons/delete.svg");
+}
+
 .ordering {
   width: 350px;
   position: relative;

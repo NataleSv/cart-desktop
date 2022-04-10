@@ -278,6 +278,22 @@ a {
 .basketCard {
   width: 633px;
 }
+.countBtn {
+ background-color: $product-price-color;
+  padding: 0 10px;
+  font-size: 25px;
+  border-radius: 50%;
+  color:$card-background;
+}
+.minus {
+  padding: 0 13px 1px;
+}
+.deleteProduct {
+  @include icons(15px);
+  background-image:$delete-product-icon;
+
+}
+
 .ordering {
   width: 350px;
   position: relative;
