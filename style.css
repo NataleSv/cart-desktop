@@ -258,13 +258,60 @@ a {
 .basketCard {
   width: 633px;
 }
-
-.countBtn {
+.basketCard .mainCardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  flex-wrap: wrap;
+}
+.basketCard .mainCardContainer .productInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.basketCard .mainCardContainer .productInfo .imgCartWrap {
+  height: 136px;
+}
+.basketCard .mainCardContainer .productInfo .imgCartWrap .imgProduct {
+  height: 100%;
+}
+.basketCard .mainCardContainer .productInfo .priceContainer {
+  margin-top: 10px;
+}
+.basketCard .footerCardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.basketCard .footerCardContainer .countContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 100px;
+}
+.basketCard .footerCardContainer .countContainer .count {
+  font-weight: 600;
+  font-size: 17px;
+}
+.basketCard .footerCardContainer .countContainer .countBtn {
   background-color: #FFA542;
   padding: 0 10px;
   font-size: 25px;
   border-radius: 50%;
   color: #FFFFFF;
+}
+.basketCard .footerCardContainer .finalProductPrice {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.price::after {
+  content: " ₽";
 }
 
 .minus {
@@ -276,14 +323,24 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("/img/icons/delete.svg");
+  height: 30px;
+  cursor: pointer;
 }
 
-.ordering {
+.orderingContainer {
   width: 350px;
-  position: relative;
+  position: absolute;
+  top: 90px;
+  left: 1000px;
   height: 115px;
 }
-.ordering .total {
+.orderingContainer .orderingCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  flex-wrap: wrap;
+}
+.orderingContainer .orderingCard .total {
   font-weight: 600;
   font-size: 15px;
 }

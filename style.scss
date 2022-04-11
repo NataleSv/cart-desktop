@@ -110,6 +110,7 @@ body {
   .sectionTitle {
     color: $product-name-color;
     @include font ($other-font-weight, 20px);
+
   }
 }
 
@@ -117,7 +118,6 @@ body {
   @include font ($other-font-weight, 20px);
   color: $grey;
   margin-bottom: 20px;
-
 }
 
 .container {
@@ -277,29 +277,76 @@ a {
 }
 .basketCard {
   width: 633px;
+  .mainCardContainer {
+    @include flex-container(top, space-between);
+    .productInfo {
+      @include flex-container(center, space-between);
+      .imgCartWrap {
+        height: 136px;
+        .imgProduct {
+          height: 100%;
+        }
+      }
+      .priceContainer{
+        margin-top: 10px;
+
+      }
+    }
+  }
+  .footerCardContainer {
+    @include flex-container(end, space-between);
+    .countContainer {
+      @include flex-container(center, space-between);
+      margin-top: 10px;
+      margin-left: 20px;
+      width: 100px;
+      .count{
+        @include font ($other-font-weight, 17px);
+      }
+      .countBtn {
+        background-color: $product-price-color;
+        padding: 0 10px;
+        font-size: 25px;
+        border-radius: 50%;
+        color:$card-background;
+      }
+    }
+    .finalProductPrice {
+      @include font ($other-font-weight, 15px);
+    }
+  }
 }
-.countBtn {
- background-color: $product-price-color;
-  padding: 0 10px;
-  font-size: 25px;
-  border-radius: 50%;
-  color:$card-background;
+
+.price {
+  &::after{
+    content: $rub;
+  }
 }
+
 .minus {
   padding: 0 13px 1px;
+
 }
 .deleteProduct {
   @include icons(15px);
   background-image:$delete-product-icon;
+  height: 30px;
+  cursor: pointer;
 
 }
 
-.ordering {
+.orderingContainer {
   width: 350px;
-  position: relative;
+  position: absolute;
+  top: 90px;
+  left: 1000px;
   height: 115px;
-  .total {
-    @include font ($other-font-weight, 15px);
+  .orderingCard {
+    @include flex-container(top, space-between);
+
+    .total {
+      @include font ($other-font-weight, 15px);
+    }
   }
 }
 
